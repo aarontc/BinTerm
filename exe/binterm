@@ -2,9 +2,27 @@
 # frozen_string_literal: true
 require 'optimist'
 
-require_relative '../binterm/binterm'
+require_relative '../lib/binterm/bin_term'
+require_relative '../lib/binterm/version'
 
+options = Optimist.options do
+	version "BinTerm #{BinTerm::VERSION} (c) 2018 Aaron Ten Clay"
+	banner <<-EOS
+This is a simple proof-of-concept for a binary terminal interface.
 
-options = Optimist.options do |opt|
+Usage:
+	binterm [options] <serial device>
 
+where [options] are:
+	EOS
+
+	opt :baud, 'Baud rate', default: 115200, type: :integer
 end
+options[:device_path] = ARGV[0]
+options.delete :help
+options.delete :version
+
+Optimist.educate unless options[:device_path]
+
+
+BinTerm::BinTerm.new(**options).run
