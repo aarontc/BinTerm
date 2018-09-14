@@ -76,7 +76,7 @@ module BinTerm
 			byte_string.unpack('C*').each_slice(bytes_per_line) do |bytes|
 				hex_groups = []
 				bytes.each_slice(8) do |group|
-					hex_groups.push format('%0x ' * group.length, *group).strip
+					hex_groups.push format('%02x ' * group.length, *group).strip
 				end
 				display = bytes.map { |b| b >= 32 && b <= 126 ? b.chr : '.' }.join
 
