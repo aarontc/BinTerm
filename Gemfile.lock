@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     binterm (0.1.0)
-      optimist
-      rubyserial
+      optimist (~> 3)
+      rubyserial (~> 0.6)
 
 GEM
   remote: https://rubygems.org/
