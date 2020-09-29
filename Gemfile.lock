@@ -11,7 +11,7 @@ GEM
     ffi (1.9.25)
     minitest (5.11.3)
     optimist (3.0.0)
-    rake (10.5.0)
+    rake (13.0.1)
     rubyserial (0.6.0)
       ffi (~> 1.9, >= 1.9.3)
 
@@ -22,7 +22,7 @@ DEPENDENCIES
   binterm!
   bundler (~> 1.16)
   minitest (~> 5.0)
-  rake (~> 10.0)
+  rake (~> 13.0)
 
 BUNDLED WITH
    1.16.4
